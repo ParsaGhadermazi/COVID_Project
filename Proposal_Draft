@@ -1,0 +1,18 @@
+Proposal
+
+Corornavirus disease, or COVID-19, is an infectious disease caused by a newly discovered coronavirus[1], first identified in Wuhan, China, in December 2019[2], and declared as a pandemic in March 11, 2020. Up to this date, November 26 2020, 12.9M cases have been identified as COVID patients in united states and 60.6M worldwide[3]. This makes the epidemiology of COVID-19 an interesting topic for further investigation. 
+
+The goal of this project is to model COVID-19 outbreak using SIR model, and then study different scenarios using the generated model. We try to answer the following questions:
+- How successfull SIR is, both locally and globally, in modeling data in since the biggining up to this point. Indeed, there will be some inconcistencies between data from CDC and our predictions. We try to answer why the model can be successful at some time intervals, locally, but not during the whole interval since the outbreak until now. 
+
+After generating our SIR Model, we try to study different scenarios. We also aim to find steady states of each scenarios, if there is one, and anaylze the stability of each of these steady states. 
+
+One particular scenario that we find particularly interesting is the introduction of vaccines. We are at a critical point at the day of writing this proposal, and there are two great vaccine candidates that are in phase three of clinical trial. We try to answer, how this can affect the behaviour of the outbreak, and more importantly, if there is an optimal vaccination rate.
+
+Answering all these inqueries requires implementation of a broad range of topics dicussed during the semester, and our final goal is to infere some realworld conclusions from our results using our simplified model.   
+
+
+
+[1]- https://www.who.int/health-topics/coronavirus#tab=tab_1
+[2]- https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/about-COVID-19.html
+[3]- https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html
