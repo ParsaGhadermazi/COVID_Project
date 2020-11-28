@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np 
 #import ACATlib
 import importlib
-importlib.reload(ACATlib)
+#importlib.reload(ACATlib)
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
@@ -28,9 +28,9 @@ beta = 0.34630808
 gama = 0.06379039 
 #====================================
 #qurantine_magicly the suxiptibles 
-sus_0 = 165000
-inf_0 = 10
-N = sus_0 + inf_0 
+inf_0 = 1
+sus_0 = (11080000/118)-inf_0
+N = 11080000/118
 N_ = [N]#,0.9*N,0.75*N]
 sus = [0.85*sus_0]#,0.75*sus_0,0.5*sus_0]
 color = ['b']#,'r','g','k'] 
@@ -96,14 +96,15 @@ sir_0_ = [(N-inf_0)/N,inf_0/N,0/N]
 sir_ = odeint(sir_model,sir_0_,t)
 print(p_fit)
 plt.figure(2)
-plt.plot(tspan,inf_,label='actual data',color = 'b')
-plt.plot(tspan,sir_[:,1],label='fitted model',color = 'r')
+plt.plot(tspan,(inf_/10),label='actual data',color = 'b')
+plt.plot(tspan,(sir_[:,1]/10),label='fitted model',color = 'r')
 plt.xlabel('days')
 plt.ylabel('fraction infected')
 plt.text(15,0,'k1(sus to inf) = 0.6996(1/(individual.day)) ,k2(inf to rec) = 0.0844(day^(-1)) ,k3 (rec to sus) =0.0020(day^(-1)) ')
 plt.legend()
 plt.grid()
 plt.show()
+
 
 
 
