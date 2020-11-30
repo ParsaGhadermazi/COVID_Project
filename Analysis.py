@@ -28,5 +28,6 @@ plt.legend()
 
 plt.ylabel("Daily Recovery")
 plt.xlabel("Active Cases")
+plt.savefig("Fitting_Result")
 plt.show()
-plt.savefig("Fitting Result")
+
