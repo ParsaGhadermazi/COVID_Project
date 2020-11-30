@@ -1,6 +1,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib import axes as axes
 Table=pd.read_csv("US_Data.csv")
 Positive_Cumulative=Table["positive"]
 Recovered_Cumulative=Table["recovered"]
@@ -22,12 +23,15 @@ for items in Recovered_Cumulative[1:]:
 m,b=np.polyfit(Active_Cases,Daily_Recovered,1)
 print(f'm={m} , b={b}')
 plt.scatter(Active_Cases,Daily_Recovered,s=5,label="Real Data",c="#5068A8")
-plt.text(3000000,140000,'k: I --> R= '+str(m))
-plt.plot(Active_Cases,[m*x+b for x in Active_Cases  ],label="label=fitted_line",color= "#E74632")
+plt.text(3000000,130000,'k: I --> R= '+str(m))
+ax=plt.plot(Active_Cases,[m*x+b for x in Active_Cases],label="label=fitted_line",color= "#E74632")
 plt.legend()
 
 plt.ylabel("Daily Recovery")
 plt.xlabel("Active Cases")
+plt.xticks(rotation="vertical")
 plt.savefig("Fitting_Result")
+plt.tight_layout()
+
 plt.show()
 
