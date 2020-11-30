@@ -22,16 +22,19 @@ for items in Recovered_Cumulative[1:]:
 
 m,b=np.polyfit(Active_Cases,Daily_Recovered,1)
 print(f'm={m} , b={b}')
-plt.scatter(Active_Cases,Daily_Recovered,s=5,label="Real Data",c="#5068A8")
+plt.scatter(Active_Cases,Daily_Recovered,s=5,label="Real Data",c="#5068A8",edgecolors='black',linewidths=0.1)
 plt.text(3000000,130000,'k: I --> R= '+str(m))
-ax=plt.plot(Active_Cases,[m*x+b for x in Active_Cases],label="label=fitted_line",color= "#E74632")
+plt.plot(Active_Cases,[m*x+b for x in Active_Cases],label="label=fitted_line",color= "#E74632")
+
+
 plt.legend()
 
 plt.ylabel("Daily Recovery")
 plt.xlabel("Active Cases")
 plt.xticks(rotation="vertical")
+
 plt.savefig("Fitting_Result")
-plt.tight_layout()
+# plt.tight_layout()
 
 plt.show()
 
